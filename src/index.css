@@ -23,11 +23,36 @@ a:hover {
 }
 
 body {
-  margin: 0;
-  display: flex;
+  margin: 0 auto;
+  box-sizing: border-box;
+  width: 90vw;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+}
+
+span {
+  max-width: 6rem;
+  text-overflow: hidden;
+}
+
+span::hover {
+  text-overflow: ellipsis;
+}
+
+input {
+  border: 2px solid #213547;
+  border-radius: 8px;
+  min-height: 1.96rem;
+  width: 73vw;
+  padding: 2px;
+  margin: 4px;
+  outline: none;
+}
+
+input:focus {
+  border: none;
+  outline: #535bf2 solid 2px;
 }
 
 h1 {
@@ -64,5 +89,11 @@ button:focus-visible {
   }
   button {
     background-color: #f9f9f9;
+  }
+}
+
+@media (min-width: 35rem) {
+  input {
+    width: 85.5vw;
   }
 }
