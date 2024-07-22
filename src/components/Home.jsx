@@ -31,22 +31,24 @@ const Home = () => {
   return (
     <>
       <Header />
-      <div style={{ margin: "1rem auto" }}>
-        <input
-          onChange={(e) =>
-            setTodo({
-              srNo: todos.length + 1,
-              name: e.target.value,
-              checked: false,
-            })
-          }
-          type="text"
-          name="todo"
-          id="todo"
-          value={todo ? todo.name : ""}
-        />
-        <button onClick={addTodo}>add</button>
-      </div>
+      <form onSubmit={addTodo}>
+        <div style={{ margin: "1rem auto" }}>
+          <input
+            onChange={(e) =>
+              setTodo({
+                srNo: todos.length + 1,
+                name: e.target.value,
+                checked: false,
+              })
+            }
+            type="text"
+            name="todo"
+            id="todo"
+            value={todo ? todo.name : ""}
+          />
+          <button type="submit">add</button>
+        </div>
+      </form>
       <Todos
         toggleCheckTodo={toggleCheckTodo}
         todos={todos}
